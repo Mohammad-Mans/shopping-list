@@ -5,6 +5,7 @@
   border-radius: 5px;
   border: 1px solid var(--white);
   height: fit-content;
+  text-align: center;
 }
 
 .shopping-cart > header {
@@ -16,4 +17,11 @@
 
 header > h2 {
   margin-left: 10px;
+}
+
+.shopping-cart > h3{
+    margin: 0;
+    padding: 20px;
+    color: var(--white);
+    border-top: 1px solid var(--white);
 }
