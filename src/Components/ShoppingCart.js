@@ -2,8 +2,9 @@ import React from "react";
 import "./ShoppingCart.css";
 import CartItem from "./CartItem";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import CheckoutForm from "./CheckoutForm";
 
-function ShoppingCart({ cart, onRemoveItem }) {
+function ShoppingCart({ cart, onRemoveItem, onSubmit }) {
   const totalAmount = cart.reduce(
     (total, item) => total + item.product.price * item.quantity,
     0
@@ -25,7 +26,12 @@ function ShoppingCart({ cart, onRemoveItem }) {
           />
         ))}
 
-        {cart.length > 0 && <h3>Total amount: ${totalAmount.toFixed(2)}</h3>}
+        {cart.length > 0 && (
+          <>
+            <h3>Total amount: ${totalAmount.toFixed(2)}</h3>
+            <CheckoutForm onSubmit={onSubmit} />
+          </>
+        )}
       </div>
     </div>
   );

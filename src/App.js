@@ -34,10 +34,19 @@ function App() {
     setCart(filteredCart);
   }
 
+  const handleSubmit = ({ name, email }) => {
+    alert(`Order submitted to ${name} (${email})`);
+    setCart([]);
+  };
+
   return (
     <div className="App">
       <ProductGrid products={products} onAddToCart={addToCart} />
-      <ShoppingCart cart={cart} onRemoveItem={removeFromCart} />
+      <ShoppingCart
+        cart={cart}
+        onRemoveItem={removeFromCart}
+        onSubmit={handleSubmit}
+      />
     </div>
   );
 }

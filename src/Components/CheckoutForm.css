@@ -1,0 +1,52 @@
+.checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center;
+}
+
+.checkout-button {
+  background-color: var(--light-blue) !important;
+  border: none !important;
+  color: var(--white) !important;
+  font-weight: 700 !important;
+  font-size: large !important;
+  text-transform: inherit !important;
+  border-radius: 30px !important;
+  height: 50px !important;
+  margin-bottom: 20px !important;
+  width: 200px !important;
+}
+
+.checkout > .form {
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form > input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.form > button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  font-size: 16px;
+  background-color: var(--light-blue);
+  border: 1px solid var(--light-blue);
+  border-radius: 30px;
+}
+
+.form > button:hover {
+  background-color: var(--white);
+  color: var(--light-blue);
+  cursor: pointer;
+}

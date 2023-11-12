@@ -3,7 +3,7 @@
 }
 
 .shopping-cart {
-  position: fixed;
+  position: sticky;
   top: 20px;
   width: 350px;
   margin-left: 20px;
