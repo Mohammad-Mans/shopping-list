@@ -1,13 +1,13 @@
 .App {
   display: flex;
   justify-content: space-between;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 20px auto;
 }
 
-:root{
-  --light-blue : #86a8cf;
-  --dark-blue : #0d1e30;
+:root {
+  --light-blue: #86a8cf;
+  --dark-blue: #0d1e30;
   --blue: #26425a;
   --white: #f0f2f5;
 }

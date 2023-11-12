@@ -1,0 +1,26 @@
+.item-container {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--white);
+  color: var(--white);
+  padding: 10px;
+}
+
+.item-container > img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.item-container > .item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.item-info > h4,
+.item-info > h5 {
+  padding: 0;
+  margin: 0;
+}

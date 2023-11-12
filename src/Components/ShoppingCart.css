@@ -1,0 +1,19 @@
+.shopping-cart {
+  width: 500px;
+  margin-left: 20px;
+  background-color: var(--blue);
+  border-radius: 5px;
+  border: 1px solid var(--white);
+  height: fit-content;
+}
+
+.shopping-cart > header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+
+header > h2 {
+  margin-left: 10px;
+}

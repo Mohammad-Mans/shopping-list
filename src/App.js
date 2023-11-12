@@ -1,6 +1,7 @@
 import "./App.css";
-import ProductGrid from "./Components/ProductGrid";
 import { useState } from "react";
+import ProductGrid from "./Components/ProductGrid";
+import ShoppingCart from "./Components/ShoppingCart";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -11,7 +12,8 @@ function App() {
 
   return (
     <div className="App">
-      <ProductGrid products={products} onAddToCart={addToCart}/>
+      <ProductGrid products={products} onAddToCart={addToCart} />
+      <ShoppingCart cart={cart} />
     </div>
   );
 }
