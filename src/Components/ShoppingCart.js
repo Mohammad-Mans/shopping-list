@@ -3,7 +3,7 @@ import "./ShoppingCart.css";
 import CartItem from "./CartItem";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-function ShoppingCart({ cart }) {
+function ShoppingCart({ cart, onRemoveItem }) {
   return (
     <div className="shopping-cart">
       <header>
@@ -12,7 +12,7 @@ function ShoppingCart({ cart }) {
       </header>
 
       {cart.map((item) => (
-        <CartItem key={item.id} item={item} />
+        <CartItem key={item.id} item={item} onRemoveItem={onRemoveItem}/>
       ))}
     </div>
   );

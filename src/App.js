@@ -10,10 +10,22 @@ function App() {
     setCart([...cart, product]);
   };
 
+  function removeFromCart(itemToRemove){
+    const updatedCart = cart.map((item) =>
+      item.product.id === itemToRemove.product.id
+        ? { ...item, quantity: item.quantity - 1 }
+        : item
+    );
+    
+    const filteredCart = updatedCart.filter((item) => item.quantity > 0);
+
+    setCart(filteredCart);
+  };
+
   return (
     <div className="App">
       <ProductGrid products={products} onAddToCart={addToCart} />
-      <ShoppingCart cart={cart} />
+      <ShoppingCart cart={cart} onRemoveItem={removeFromCart} />
     </div>
   );
 }

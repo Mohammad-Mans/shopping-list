@@ -1,7 +1,13 @@
-.item-container {
+.cart-item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   border-top: 1px solid var(--white);
+}
+
+.cart-item > .item-container {
+  display: flex;
+  align-items: center;
   color: var(--white);
   padding: 10px;
 }
@@ -23,4 +29,19 @@
 .item-info > h5 {
   padding: 0;
   margin: 0;
+}
+
+.cart-item > button {
+  margin: 10px;
+  height: 40px;
+  background-color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.cart-item > button:hover {
+  cursor: pointer;
+  background-color: var(--blue);
+  color: var(--white);
 }

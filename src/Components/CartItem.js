@@ -1,7 +1,7 @@
 import React from "react";
 import "./CartItem.css";
 
-function CartItem({ item }) {
+function CartItem({ item, onRemoveItem }) {
   return (
     <div className="cart-item">
       <div className="item-container">
@@ -12,6 +12,7 @@ function CartItem({ item }) {
           <h5>${item.price}</h5>
         </div>
       </div>
+      <button onClick={() => onRemoveItem(item)}>Remove</button>
     </div>
   );
 }
