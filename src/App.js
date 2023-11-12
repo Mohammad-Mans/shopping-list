@@ -12,7 +12,9 @@ function App() {
     if (existingItem) {
       setCart(
         cart.map((item) =>
-          item.product.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+          item.product.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
         )
       );
     } else {
@@ -20,17 +22,17 @@ function App() {
     }
   };
 
-  function removeFromCart(itemToRemove){
+  function removeFromCart(itemToRemove) {
     const updatedCart = cart.map((item) =>
       item.product.id === itemToRemove.product.id
         ? { ...item, quantity: item.quantity - 1 }
         : item
     );
-    
+
     const filteredCart = updatedCart.filter((item) => item.quantity > 0);
 
     setCart(filteredCart);
-  };
+  }
 
   return (
     <div className="App">

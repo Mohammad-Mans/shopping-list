@@ -15,26 +15,26 @@
   border-radius: 5px;
 }
 
-.product > h3{
-    width: 110px;
+.product > h3 {
+  width: 110px;
 }
 
 .product > button {
-    padding: 15px;
-    margin-right: 10px;
-    font-size: 16px;
-    background-color: var(--light-blue);
-    border: 1px solid var(--light-blue);
-    border-radius: 30px;
+  padding: 15px;
+  margin-right: 10px;
+  font-size: 16px;
+  background-color: var(--light-blue);
+  border: 1px solid var(--light-blue);
+  border-radius: 30px;
 }
 
 .product > button:hover {
-    background-color: var(--white);
-    color: var(--light-blue);
-    cursor: pointer;
+  background-color: var(--white);
+  color: var(--light-blue);
+  cursor: pointer;
 }
 
 .product > button:active {
-    color: var(--dark-blue);
-    border-color: var(--dark-blue);
+  color: var(--dark-blue);
+  border-color: var(--dark-blue);
 }

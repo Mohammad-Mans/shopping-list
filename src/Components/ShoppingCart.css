@@ -1,5 +1,11 @@
+.cart-container {
+  width: 350px;
+}
+
 .shopping-cart {
-  width: 500px;
+  position: fixed;
+  top: 20px;
+  width: 350px;
   margin-left: 20px;
   background-color: var(--blue);
   border-radius: 5px;
@@ -19,9 +25,9 @@ header > h2 {
   margin-left: 10px;
 }
 
-.shopping-cart > h3{
-    margin: 0;
-    padding: 20px;
-    color: var(--white);
-    border-top: 1px solid var(--white);
+.shopping-cart > h3 {
+  margin: 0;
+  padding: 20px;
+  color: var(--white);
+  border-top: 1px solid var(--white);
 }

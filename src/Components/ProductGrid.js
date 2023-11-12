@@ -2,7 +2,7 @@ import React from "react";
 import Product from "./Product";
 import "./ProductGrid.css";
 
-function ProductGrid({ products, onAddToCart  }) {
+function ProductGrid({ products, onAddToCart }) {
   return (
     <div className="product-grid">
       {products.map((product) => (

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Product.css";
 
-function Product({ product, onAddToCart  }) {
+function Product({ product, onAddToCart }) {
   return (
     <div className="product">
       <img src={product.image} alt={product.name} />
