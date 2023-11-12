@@ -4,3 +4,10 @@
   max-width: 800px;
   margin: 20px auto;
 }
+
+:root{
+  --light-blue : #86a8cf;
+  --dark-blue : #0d1e30;
+  --blue: #26425a;
+  --white: #f0f2f5;
+}

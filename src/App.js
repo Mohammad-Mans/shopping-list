@@ -1,10 +1,17 @@
 import "./App.css";
 import ProductGrid from "./Components/ProductGrid";
+import { useState } from "react";
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
+
   return (
     <div className="App">
-      <ProductGrid products={products} />
+      <ProductGrid products={products} onAddToCart={addToCart}/>
     </div>
   );
 }
