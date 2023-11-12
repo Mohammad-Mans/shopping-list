@@ -12,7 +12,7 @@ function ShoppingCart({ cart, onRemoveItem }) {
       </header>
 
       {cart.map((item) => (
-        <CartItem key={item.id} item={item} onRemoveItem={onRemoveItem}/>
+        <CartItem key={item.product.id} item={item} onRemoveItem={onRemoveItem}/>
       ))}
     </div>
   );
