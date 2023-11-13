@@ -1,43 +1,32 @@
 import "./App.css";
-import { useState } from "react";
+import { useReducer } from "react";
 import ProductGrid from "./Components/ProductGrid";
 import ShoppingCart from "./Components/ShoppingCart";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, dispatch] = useReducer(cartReducer, []);
 
-  const addToCart = (product) => {
-    const existingItem = cart.find((item) => item.product.id === product.id);
-
-    if (existingItem) {
-      setCart(
-        cart.map((item) =>
-          item.product.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
-      );
-    } else {
-      setCart([...cart, { product, quantity: 1 }]);
-    }
-  };
-
-  function removeFromCart(itemToRemove) {
-    const updatedCart = cart.map((item) =>
-      item.product.id === itemToRemove.product.id
-        ? { ...item, quantity: item.quantity - 1 }
-        : item
-    );
-
-    const filteredCart = updatedCart.filter((item) => item.quantity > 0);
-
-    setCart(filteredCart);
+  function addToCart(product) {
+    dispatch({
+      type: "add",
+      product: product,
+    });
   }
 
-  const handleSubmit = ({ name, email }) => {
-    alert(`Order submitted to ${name} (${email})`);
-    setCart([]);
-  };
+  function removeFromCart(itemToRemove) {
+    dispatch({
+      type: "remove",
+      itemToRemove: itemToRemove,
+    });
+  }
+
+  function handleSubmit({ name, email }) {
+    dispatch({
+      type: "submit",
+      name: name,
+      email: email,
+    });
+  }
 
   return (
     <div className="App">
@@ -51,7 +40,46 @@ function App() {
   );
 }
 
-export default App;
+function cartReducer(cart, action) {
+  switch (action.type) {
+    case "add": {
+      const newProduct = action.product;
+      const existingItem = cart.find(
+        (item) => item.product.id === newProduct.id
+      );
+
+      if (existingItem) {
+        return cart.map((item) =>
+          item.product.id === newProduct.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        return [...cart, { product: newProduct, quantity: 1 }];
+      }
+    }
+    case "remove": {
+      const updatedCart = cart.map((item) =>
+        item.product.id === action.itemToRemove.product.id
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      );
+
+      const filteredCart = updatedCart.filter((item) => item.quantity > 0);
+
+      return filteredCart;
+    }
+
+    case "submit": {
+      alert(`Order submitted to ${action.name} (${action.email})`);
+      return [];
+    }
+
+    default: {
+      throw Error("Unknown action: " + action.type);
+    }
+  }
+}
 
 const products = [
   {
@@ -90,3 +118,5 @@ const products = [
     price: 12.99,
   },
 ];
+
+export default App;
